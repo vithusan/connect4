@@ -9,7 +9,7 @@ const playersTurn = document.querySelector('.turns')
 //     playersTurn.appendChild(testRow)
 // }
 
-for(let i=0;i<2;i++){
+for (let i = 0; i < 2; i++) {
     const testRow = document.createElement('div')
     testRow.setAttribute('class', 'testRow')
     testRow.setAttribute('data-pl', i + 1)
@@ -29,12 +29,14 @@ for(let i=0;i<2;i++){
 //     }
 // }
 
-for(let i=0;i<2;i++){
+
+
+for (let i = 0; i < 2; i++) {
     const newElement1 = document.createElement('div')
     newElement1.setAttribute('class', 'column')
     newElement1.setAttribute('data-col', i + 1)
     mainBoard.appendChild(newElement1)
-    for(let k=0;k<2;k++){
+    for (let k = 0; k < 2; k++) {
         const newElement2 = document.createElement('div')
         newElement2.setAttribute('class', 'testCir')
         newElement2.setAttribute('data-pos', k + 1)
@@ -42,7 +44,7 @@ for(let i=0;i<2;i++){
     }
 }
 
-const circleDiv = document.getElementsByClassName('testCir')
+// const circleDiv = document.getElementsByClassName('testCir')
 
 // for(let i=0; i<circleDiv.length; i++){
 //     circleDiv[i].addEventListener('click', () => {
@@ -50,12 +52,18 @@ const circleDiv = document.getElementsByClassName('testCir')
 //     })
 // }
 
-const playerClick = document.querySelectorAll('.testRow')
 
-// const testFunction = () => {
-//     if()
-// }
+//MAKE AN ARRAY WITHIN AN ARRAY TO STORE ALL THE CIRCLUES
 
-for(let i=0;i<playerClick.length; i++){
-    playerClick[i].addEventListener('click', testFunction)
+const test1 = document.getElementsByClassName('column')
+const test2 = document.getElementsByClassName('testCir')
+const testFunction = () => {
+    for(let i=0; i<test1.length; i++){
+        
+        for(let j=0; j<test2.length; j++){
+            
+            console.log(test2[j])
+        }
+    }
 }
+console.log(testFunction())
