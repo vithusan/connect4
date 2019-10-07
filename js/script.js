@@ -46,49 +46,33 @@ const createBoard = () => {
             //inidCir.textContent += board[row][pos]
             inidCir.setAttribute('class', 'eachCir')
             rowElement.appendChild(inidCir)
-            inidCir.addEventListener('click', () => {
+            inidCir.addEventListener('click', function () {
 
                 board[row][pos] = 1
-                
-                let CirBtn = document.getElementsByClassName('eachCir')
-                for(let i=0;i<CirBtn.length;i++){
-                    CirBtn[i].classList.remove('eachCir')
-                    console.log(CirBtn[i])
-                }
-                
-                createBoard()
+                this.classList.add('testCir2')
                 checkColumn()
                 checkRow()
 
-
             })
 
-            
-            
         }
     }
 }
 
 createBoard()
-//runFunction()
-//const inidCirBtn = document.getElementsByClassName('eachCir')
-
-// const runFunction=() =>{
-
-//     for(let r =0;r<board.length;r++){
-//         for(let p=0; p<board[r].length;p++){
-    
-//             inidCirBtn.addEventListener('click', () => {
-//                 console.log(p)
-//             })
-            
-//         }
-//     }
-// }
 
 
-const rows = document.getElementsByClassName('row')
 
+const reset = () => {
+    board = [
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
+    ]
+
+    createBoard()
+}
 
 //MAKE AN ARRAY WITHIN AN ARRAY TO STORE ALL THE CIRCLUES
 
@@ -163,8 +147,8 @@ function checkColumn() {
                 board[i][j] == board[i][j + 2] &&
                 board[i][j] == board[i][j + 3]
             ) {
-                console.log('column')
-                console.log(board)
+                alert('Player 1 won')
+                reset()
             }
         }
     }
@@ -183,8 +167,8 @@ function checkRow() {
                 board[j][i] == board[j + 2][i] &&
                 board[j][i] == board[j + 3][i]
             ) {
-                console.log('row')
-                console.log(board)
+                alert('Player 2 won')
+                reset()
             }
 
         }
