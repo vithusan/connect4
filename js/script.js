@@ -43,19 +43,25 @@ const createBoard = () => {
         //console.log(row)
         for (let pos = 0; pos < board[row].length; pos++) {
             let inidCir = document.createElement('div')
-            inidCir.textContent += board[row][pos]
+            //inidCir.textContent += board[row][pos]
             inidCir.setAttribute('class', 'eachCir')
             rowElement.appendChild(inidCir)
-            // inidCir.addEventListener('click', () => {
+            inidCir.addEventListener('click', () => {
 
-            //     board[row][pos] = 1
-            //    changeColorFunction()
-            //     createBoard()
-            //     checkColumn()
-            //     checkRow()
+                board[row][pos] = 1
+                
+                let CirBtn = document.getElementsByClassName('eachCir')
+                for(let i=0;i<CirBtn.length;i++){
+                    CirBtn[i].classList.remove('eachCir')
+                    console.log(CirBtn[i])
+                }
+                
+                createBoard()
+                checkColumn()
+                checkRow()
 
 
-            // })
+            })
 
             
             
@@ -64,21 +70,21 @@ const createBoard = () => {
 }
 
 createBoard()
-runFunction()
-const inidCirBtn = document.getElementsByClassName('eachCir')
+//runFunction()
+//const inidCirBtn = document.getElementsByClassName('eachCir')
 
-const runFunction=() =>{
+// const runFunction=() =>{
 
-    for(let r =0;r<board.length;r++){
-        for(let p=0; p<board[r].length;p++){
+//     for(let r =0;r<board.length;r++){
+//         for(let p=0; p<board[r].length;p++){
     
-            inidCirBtn.addEventListener('click', () => {
-                console.log(p)
-            })
+//             inidCirBtn.addEventListener('click', () => {
+//                 console.log(p)
+//             })
             
-        }
-    }
-}
+//         }
+//     }
+// }
 
 
 const rows = document.getElementsByClassName('row')
