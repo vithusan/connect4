@@ -1,7 +1,9 @@
 const mainBoard = document.querySelector('.connecterDisplay')
 // const playersTurn = document.querySelector('.turns')
 
-
+// document.addEventListener('click', ()=> {
+//     checkEmptyColumn()
+// })
 // let board = [
 //     [0, 0, 0, 0],
 //     [0, 0, 0, 0],
@@ -10,19 +12,20 @@ const mainBoard = document.querySelector('.connecterDisplay')
 // ];
 
 let board = [
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0]
+
 ];
 
 let player1Turn = true
 let empArray = []
 const createBoard = () => {
-
+    console.table(board)
     //clear the createboard function inside the html
     mainBoard.innerHTML = ''
 
@@ -36,18 +39,32 @@ const createBoard = () => {
 
 
         //creaet divs in each rows
-        for (let col = board[row].length - 1; col >= 0; col--) {
+        for (let col = 0; col < board[row].length; col++) {
             let colElement = document.createElement('div')
             colElement.setAttribute('class', 'eachCir empty')
             colElement.setAttribute('data-col', col + 1)
             //colElement.setAttribute('data-row', row + 1)
             rowElement.appendChild(colElement)
-            
+
+            if (board[row][col] === 1) {
+                colElement.classList.add('red')
+            }
+
+            if (board[row][col] === 2) {
+                colElement.classList.add('black')
+            }
+
+            // for (let r = 0; r < rowElement.length; r++) {
+            //     rowElement[r].addEventListener('click', () => {
+            //         checkEmptyColumn(r)
+            //     })
+            // }
 
 
-            colElement.addEventListener('click', function(){
-                if(player1Turn){
-                    colElement.classList.add('red')
+
+            colElement.addEventListener('click', function () {
+                console.table(board)
+                if (player1Turn) {
                     board[row][col] = 1
                     setTimeout(() => {
                         checkRow()
@@ -55,16 +72,16 @@ const createBoard = () => {
 
                     }, 1000)
                     player1Turn = false
-                }else {
-                    colElement.classList.add('black')
-                board[row][col] = 2
-                setTimeout(() => {
-                    checkRow()
-                    checkColumn()
+                } else {
+                    board[row][col] = 2
+                    setTimeout(() => {
+                        checkRow()
+                        checkColumn()
 
-                }, 1000)
-                player1Turn = true
+                    }, 1000)
+                    player1Turn = true
                 }
+                createBoard()
 
             })
 
@@ -75,6 +92,26 @@ const createBoard = () => {
 
 createBoard()
 
+
+const checkEmptyColumn = (column) => {
+    // get column when you click 
+    for (let i = board.length - 1; i >= 0; i--) {
+        console.log(`board row ${i} -> ${board[column][i]}`)
+        //if empty set to player color chip
+        // return after you do that
+
+        for (let c = 0; c < colElement.length; c++) {
+            if (board[column][i] === 0) {
+                colElement[c].classList.add('red')
+                return
+            }
+
+
+        }
+
+
+    }
+}
 
 const reset = () => {
     board = [
