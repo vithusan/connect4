@@ -123,8 +123,12 @@ function checkColumn() {
                 board[i][j] == board[i][j + 2] &&
                 board[i][j] == board[i][j + 3]
             ) {
+                if(player1Turn){
+                    alert('player 2 won')
+                }else {
+                    alert('player 1 won')
+                }
                 
-                alert('player1 won')
                 
                 reset()
             }
@@ -145,8 +149,11 @@ function checkRow() {
                 board[j][i] == board[j + 2][i] &&
                 board[j][i] == board[j + 3][i]
             ) {
-               
-                alert('player2 won')
+                if(player1Turn){
+                    alert('player 2 won')
+                }else {
+                    alert('player 1 won')
+                }
                 reset()
             }
 
