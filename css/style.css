@@ -75,8 +75,12 @@ h1{
     margin-bottom: 10px;
    
 }
-.testCir2{
+.red{
     background: #f76c6c;
+}
+
+.black{
+    background: #374785;
 }
 
 .testRow{
