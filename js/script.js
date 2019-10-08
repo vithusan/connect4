@@ -2,13 +2,6 @@ const mainBoard = document.querySelector('.connecterDisplay')
 // const playersTurn = document.querySelector('.turns')
 
 
-// for(let i=0;i<7;i++){
-//     const testRow = document.createElement('div')
-//     testRow.setAttribute('class', 'testRow')
-//     testRow.setAttribute('data-pl', i + 1)
-//     playersTurn.appendChild(testRow)
-// }
-
 // let board = [
 //     [0, 0, 0, 0],
 //     [0, 0, 0, 0],
@@ -27,8 +20,9 @@ let board = [
 ];
 
 let player1Turn = true
+let empArray = []
 const createBoard = () => {
-    
+
     //clear the createboard function inside the html
     mainBoard.innerHTML = ''
 
@@ -42,30 +36,15 @@ const createBoard = () => {
 
 
         //creaet divs in each rows
-        for (let col = 0; col < board[row].length; col++) {
+        for (let col = board[row].length - 1; col >= 0; col--) {
             let colElement = document.createElement('div')
             colElement.setAttribute('class', 'eachCir empty')
             colElement.setAttribute('data-col', col + 1)
             //colElement.setAttribute('data-row', row + 1)
             rowElement.appendChild(colElement)
+            
 
-            let colBtn = document.getElementsByClassName('eachCir')
 
-            // console.log(colBtn)
-
-            // rowElement.addEventListener('click', function() {
-
-            //     //e.preventDefault()
-            //     //let num = rowElement.dataset.col
-            //     // for(let i=num.length - 1;i>=0; i--){
-            //     //    console.log(num[i])
-
-            //         colElement.classList.add('testCir2')
-            // //    }
-
-            // })
-
-           
             colElement.addEventListener('click', function(){
                 if(player1Turn){
                     colElement.classList.add('red')
@@ -73,7 +52,7 @@ const createBoard = () => {
                     setTimeout(() => {
                         checkRow()
                         checkColumn()
-                        
+
                     }, 1000)
                     player1Turn = false
                 }else {
@@ -82,11 +61,11 @@ const createBoard = () => {
                 setTimeout(() => {
                     checkRow()
                     checkColumn()
-                    
+
                 }, 1000)
                 player1Turn = true
                 }
-                
+
             })
 
         }
@@ -96,11 +75,6 @@ const createBoard = () => {
 
 createBoard()
 
-// document.body.addEventListener("click", ".eachCir", function (e) {
-//     e.preventDefault();
-//     let number = $(this).data('col');
-//     console.log(number);
-// });
 
 const reset = () => {
     board = [
@@ -127,13 +101,13 @@ function checkColumn() {
                 board[i][j] == board[i][j + 2] &&
                 board[i][j] == board[i][j + 3]
             ) {
-                if(player1Turn){
+                if (player1Turn) {
                     alert('player 2 won')
-                }else {
+                } else {
                     alert('player 1 won')
                 }
-                
-                
+
+
                 reset()
             }
         }
@@ -153,9 +127,9 @@ function checkRow() {
                 board[j][i] == board[j + 2][i] &&
                 board[j][i] == board[j + 3][i]
             ) {
-                if(player1Turn){
+                if (player1Turn) {
                     alert('player 2 won')
-                }else {
+                } else {
                     alert('player 1 won')
                 }
                 reset()
