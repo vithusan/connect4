@@ -161,7 +161,10 @@ const checkEmptyColumn = (column) => {
     }
 }
 
-
+const resetBtn = document.querySelector('#resetBtn')
+resetBtn.addEventListener('click', () => {
+    location.reload()
+})
 const reset = () => {
     board = [
         [0, 0, 0, 0, 0, 0, 0],
