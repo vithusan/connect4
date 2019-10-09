@@ -59,3 +59,13 @@ h1{
     width: 100%;
     margin-bottom: 0;
 }
+
+.inputPlayerNames{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #95b9cc;
+    position: relative;
+    width: 600px;
+    height: 250px;
+}
