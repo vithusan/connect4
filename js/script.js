@@ -116,11 +116,10 @@ createBoard()
 
 
 const checkEmptyColumn = (column) => {
-    // get column when you click 
+    
     for (let i = board.length - 1; i>=0; i--) {
         console.log(`board row ${i} -> ${board[i][column]}`)
-        //if empty set to player color chip
-        // return after you do that
+       
 
 
         if (board[i][column] === 0) {
@@ -130,7 +129,7 @@ const checkEmptyColumn = (column) => {
                         checkRow()
                         checkColumn()
                         checkLtoR()
-                        // checkRtoL()
+                        
                     }, 300)
                     p1Tag.style.borderBottom = '2px solid #f76c6c'
                     player1Turn = false
@@ -141,7 +140,7 @@ const checkEmptyColumn = (column) => {
                         checkRow()
                         checkColumn()
                         checkLtoR()
-                        // checkRtoL()
+                       
                     }, 300)
                     p2Tag.style.borderBottom = '2px solid #374785'
                     player1Turn = true
@@ -149,7 +148,7 @@ const checkEmptyColumn = (column) => {
             return  createBoard()
         }
 
-        // createBoard()
+    
 
         
 
@@ -228,30 +227,6 @@ function checkLtoR() {
 
 }
 
-// function checkRtoL() {
-
-//     //column
-//     for (let i = 0; i < board.length -3; i++) {
-//         for (let j = 3; j < board[i].length; j++) {
-
-//             if (board[i][j] != 0 &&
-//                 board[i][j] == board[i+1][j - 1] &&
-//                 board[i][j] == board[i+2][j - 2] &&
-//                 board[i][j] == board[i+3][j - 3]
-//             ) {
-//                 if (player1Turn) {
-//                     alert('player 2 won')
-//                 } else {
-//                     alert('player 1 won')
-//                 }
-
-
-//                 reset()
-//             }
-//         }
-//     }
-
-// }
 
 function checkRow() {
 
