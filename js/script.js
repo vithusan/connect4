@@ -1,9 +1,55 @@
 const mainBoard = document.querySelector('.connecterDisplay')
-const inputDiv = document.querySelector('#inputPlayerName')
-const inputName = document.querySelector('#inputName')
-const inputBtn = document.querySelector('#nextBtn')
+let playersScore = document.querySelector('#playersScore')
+
+const nameBox = () =>{
+    let inputDiv = document.querySelector('#popup')
+    let inputDiv2 = document.querySelector('#popup2')
+    let playersNm = document.querySelector('#player1')
+    let playersNm2 = document.querySelector('#player2')
+    let inputName = document.querySelector('#inputName')
+    let inputName2 = document.querySelector('#inputName2')
+    let inName = document.querySelector('.inName')
+    let inputBtn = document.querySelector('#nextBtn')
+    let inputBtn2 = document.querySelector('#nextBtn2')
+    let p1Tag = document.getElementById('p1Tag')
+    let p2Tag = document.getElementById('p2Tag')
 
 
+    inputDiv.style.display = 'block'
+    inputDiv2.style.display = 'none'
+
+    inputBtn.addEventListener('click', () =>{
+
+        if(inputName.value == ''){
+            playersNm.innerHTML = `please enter Name`
+            return false
+        }
+        p1Tag.innerText = `${inputName.value}`
+        
+        inputDiv.style.display = 'none'
+        inputDiv2.style.display = 'block'
+        nextFuntion()
+        
+    })
+
+    const nextFuntion = () =>{
+        inputBtn2.addEventListener('click', () =>{
+
+            if(inputName2.value == ''){
+                playersNm2.innerHTML = `please enter Name`
+                return false
+            }
+            p2Tag.innerText = `${inputName2.value}`
+            inputDiv2.style.display = 'none'
+
+        })
+    }
+
+
+}
+
+
+nameBox()
 let board = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
@@ -13,6 +59,8 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0]
 ];
 
+let pl1Score = 0
+let pl2Score = 0
 let player1Turn = true
 let empArray = []
 const createBoard = () => {
@@ -54,33 +102,40 @@ const createBoard = () => {
 
 
             colElement.addEventListener('click', function () {
+               
                 console.table(board)
+
                 if (player1Turn) {
                     board[row][col] = 1
                     setTimeout(() => {
                         checkRow()
                         checkColumn()
-                        checkLtoR()
-                        checkRtoL()
-                    }, 1000)
+                        //checkLtoR()
+                        //checkRtoL()
+                    }, 500)
                     player1Turn = false
+                    
                 } else {
                     board[row][col] = 2
                     setTimeout(() => {
                         checkRow()
                         checkColumn()
-                        checkLtoR()
-                        checkRtoL()
-                    }, 1000)
+                        //checkLtoR()
+                        //checkRtoL()
+                    }, 500)
                     player1Turn = true
                 }
+                
                 createBoard()
+                
 
             })
 
         }
 
     }
+
+    playersScore.innerText = `${pl1Score}-${pl2Score}`
 }
 
 createBoard()
@@ -105,6 +160,7 @@ const checkEmptyColumn = (column) => {
 
     }
 }
+
 
 const reset = () => {
     board = [
@@ -132,8 +188,11 @@ function checkColumn() {
             ) {
                 if (player1Turn) {
                     alert('player 2 won')
+                    pl2Score += 1
+                    
                 } else {
                     alert('player 1 won')
+                    pl1Score += 1
                 }
 
 
@@ -144,55 +203,55 @@ function checkColumn() {
 
 }
 
-function checkLtoR() {
+// function checkLtoR() {
 
-    //column
-    for (let i = 0; i < board.length; i++) {
-        for (let j = 0; j < board[i].length; j++) {
+//     //column
+//     for (let i = 0; i < board.length; i++) {
+//         for (let j = 0; j < board[i].length; j++) {
 
-            if (board[i][j] != 0 &&
-                board[i][j] == board[i -1][j + 1] &&
-                board[i][j] == board[i-2][j + 2] &&
-                board[i][j] == board[i-3][j + 3]
-            ) {
-                if (player1Turn) {
-                    alert('player 2 won')
-                } else {
-                    alert('player 1 won')
-                }
-
-
-                reset()
-            }
-        }
-    }
-
-}
-
-function checkRtoL() {
-
-    //column
-    for (let i = 0; i < board.length; i++) {
-        for (let j = 0; j < board.length -3; j++) {
-
-            if (board[j][i] != 0 &&
-                board[j][i] == board[j-1][i + 1] &&
-                board[j][i] == board[j-2][i + 2] &&
-                board[j][i] == board[j-3][i + 3]
-            ) {
-                if (player1Turn) {
-                    alert('player 2 won')
-                } else {
-                    alert('player 1 won')
-                }
+//             if (board[i][j] != 0 &&
+//                 board[i][j] == board[i -1][j + 1] &&
+//                 board[i][j] == board[i-2][j + 2] &&
+//                 board[i][j] == board[i-3][j + 3]
+//             ) {
+//                 if (player1Turn) {
+//                     alert('player 2 won')
+//                 } else {
+//                     alert('player 1 won')
+//                 }
 
 
-                reset()
-            }
-        }
-    }
+//                 reset()
+//             }
+//         }
+//     }
 
-}
+// }
+
+// function checkRtoL() {
+
+//     //column
+//     for (let i = 0; i < board.length; i++) {
+//         for (let j = 0; j < board.length -3; j++) {
+
+//             if (board[j][i] != 0 &&
+//                 board[j][i] == board[j-1][i + 1] &&
+//                 board[j][i] == board[j-2][i + 2] &&
+//                 board[j][i] == board[j-3][i + 3]
+//             ) {
+//                 if (player1Turn) {
+//                     alert('player 2 won')
+//                 } else {
+//                     alert('player 1 won')
+//                 }
+
+
+//                 reset()
+//             }
+//         }
+//     }
+
+// }
 
 function checkRow() {
 
@@ -208,8 +267,10 @@ function checkRow() {
             ) {
                 if (player1Turn) {
                     alert('player 2 won')
+                    pl2Score += 1
                 } else {
                     alert('player 1 won')
+                    pl1Score += 1
                 }
                 reset()
             }
@@ -218,4 +279,6 @@ function checkRow() {
 
     }
 }
+
+
 
