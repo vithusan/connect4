@@ -64,7 +64,7 @@ let pl2Score = 0
 let player1Turn = true
 let empArray = []
 const createBoard = () => {
-    console.table(board)
+    
     //clear the createboard function inside the html
     mainBoard.innerHTML = ''
 
@@ -99,8 +99,6 @@ const createBoard = () => {
             //     })
             // }
 
-
-
             colElement.addEventListener('click', function () {
                
                 console.table(board)
@@ -112,7 +110,7 @@ const createBoard = () => {
                         checkColumn()
                         //checkLtoR()
                         //checkRtoL()
-                    }, 500)
+                    }, 300)
                     player1Turn = false
                     
                 } else {
@@ -122,7 +120,7 @@ const createBoard = () => {
                         checkColumn()
                         //checkLtoR()
                         //checkRtoL()
-                    }, 500)
+                    }, 300)
                     player1Turn = true
                 }
                 
@@ -190,11 +188,11 @@ function checkColumn() {
                 board[i][j] == board[i][j + 3]
             ) {
                 if (player1Turn) {
-                    alert('player 2 won')
+                    
                     pl2Score += 1
                     
                 } else {
-                    alert('player 1 won')
+                    
                     pl1Score += 1
                 }
 
@@ -269,10 +267,10 @@ function checkRow() {
                 board[j][i] == board[j + 3][i]
             ) {
                 if (player1Turn) {
-                    alert('player 2 won')
+                    
                     pl2Score += 1
                 } else {
-                    alert('player 1 won')
+                    
                     pl1Score += 1
                 }
                 reset()
