@@ -35,20 +35,12 @@ h1{
     height: auto;
 }
 
-/* .connecterDisplay{
-    display: grid;
-    grid-template-rows: repeat(4, 100px);
-    grid-template-columns: repeat(4, 100px);
-    justify-content: center;
-} */
-
-
 .eachCir{
     width: 80px;
     height: 80px;
     border-radius: 50%;
     background: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
    
 }
 .red{
@@ -57,32 +49,6 @@ h1{
 
 .black{
     background: #374785;
-}
-
-.testRow{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
-.testRow:hover{
-    background: #f76c6c;
-}
-
-.circles{
-    width: 0;
-    height: 0;
-}
-.test1{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: #374785;
-}
-.test2{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: #f76c6c;
 }
 
 .row{

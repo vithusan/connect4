@@ -17,9 +17,7 @@ let board = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0]
-
 ];
 
 let player1Turn = true
@@ -69,7 +67,8 @@ const createBoard = () => {
                     setTimeout(() => {
                         checkRow()
                         checkColumn()
-
+                        checkLtoR()
+                        checkRtoL()
                     }, 1000)
                     player1Turn = false
                 } else {
@@ -77,7 +76,8 @@ const createBoard = () => {
                     setTimeout(() => {
                         checkRow()
                         checkColumn()
-
+                        checkLtoR()
+                        checkRtoL()
                     }, 1000)
                     player1Turn = true
                 }
@@ -120,7 +120,6 @@ const reset = () => {
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0]
     ];
 
@@ -137,6 +136,56 @@ function checkColumn() {
                 board[i][j] == board[i][j + 1] &&
                 board[i][j] == board[i][j + 2] &&
                 board[i][j] == board[i][j + 3]
+            ) {
+                if (player1Turn) {
+                    alert('player 2 won')
+                } else {
+                    alert('player 1 won')
+                }
+
+
+                reset()
+            }
+        }
+    }
+
+}
+
+function checkLtoR() {
+
+    //column
+    for (let i = 0; i < board.length; i++) {
+        for (let j = 0; j < board[i].length; j++) {
+
+            if (board[i][j] != 0 &&
+                board[i][j] == board[i -1][j + 1] &&
+                board[i][j] == board[i-2][j + 2] &&
+                board[i][j] == board[i-3][j + 3]
+            ) {
+                if (player1Turn) {
+                    alert('player 2 won')
+                } else {
+                    alert('player 1 won')
+                }
+
+
+                reset()
+            }
+        }
+    }
+
+}
+
+function checkRtoL() {
+
+    //column
+    for (let i = 0; i < board.length; i++) {
+        for (let j = 0; j < board.length -3; j++) {
+
+            if (board[j][i] != 0 &&
+                board[j][i] == board[j-1][i + 1] &&
+                board[j][i] == board[j-2][i + 2] &&
+                board[j][i] == board[j-3][i + 3]
             ) {
                 if (player1Turn) {
                     alert('player 2 won')
