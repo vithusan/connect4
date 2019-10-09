@@ -118,10 +118,7 @@ createBoard()
 const checkEmptyColumn = (column) => {
     
     for (let i = board.length - 1; i>=0; i--) {
-        console.log(`board row ${i} -> ${board[i][column]}`)
        
-
-
         if (board[i][column] === 0) {
                  if (player1Turn) {
                     board[i][column] = 1
@@ -129,7 +126,7 @@ const checkEmptyColumn = (column) => {
                         checkRow()
                         checkColumn()
                         checkLtoR()
-                        
+                        checkRtoL()
                     }, 300)
                     p1Tag.style.borderBottom = '2px solid #f76c6c'
                     player1Turn = false
@@ -140,7 +137,7 @@ const checkEmptyColumn = (column) => {
                         checkRow()
                         checkColumn()
                         checkLtoR()
-                       
+                       checkRtoL()
                     }, 300)
                     p2Tag.style.borderBottom = '2px solid #374785'
                     player1Turn = true
@@ -172,7 +169,7 @@ const reset = () => {
     createBoard()
 }
 
-function checkColumn() {
+function checkRow() {
 
     //column
     for (let i = 0; i < board.length; i++) {
@@ -184,11 +181,11 @@ function checkColumn() {
                 board[i][j] == board[i][j + 3]
             ) {
                 if (player1Turn) {
-
+                
                     pl2Score += 1
 
                 } else {
-
+                    
                     pl1Score += 1
                 }
 
@@ -200,35 +197,8 @@ function checkColumn() {
 
 }
 
-function checkLtoR() {
 
-    //column
-    for (let i = 0; i < board.length; i++) {
-        for (let j = 0; j < board[i].length; j++) {
-
-            if (board[i][j] != 0 &&
-                board[i][j] == board[i-1][j + 1] &&
-                board[i][j] == board[i-2][j + 2] &&
-                board[i][j] == board[i-3][j + 3]
-            ) {
-                if (player1Turn) {
-
-                    pl2Score += 1
-
-                } else {
-
-                    pl1Score += 1
-                }
-
-                reset()
-            }
-        }
-    }
-
-}
-
-
-function checkRow() {
+function checkColumn() {
 
 
     //row
@@ -241,10 +211,10 @@ function checkRow() {
                 board[j][i] == board[j + 3][i]
             ) {
                 if (player1Turn) {
-
+                    
                     pl2Score += 1
                 } else {
-
+                    
                     pl1Score += 1
                 }
                 reset()
@@ -253,6 +223,62 @@ function checkRow() {
         }
 
     }
+}
+
+function checkLtoR() {
+
+   
+    for (let i = 0; i < board.length; i++) {
+        for (let j = 0; j < board[i].length; j++) {
+
+            if (board[i][j] != 0 &&
+                board[i][j] == board[i - 1][j + 1] &&
+                board[i][j] == board[i - 2][j + 2] &&
+                board[i][j] == board[i - 3][j + 3]
+            ) {
+                if (player1Turn) {
+
+                    pl2Score += 1
+
+                } else {
+
+                    pl1Score += 1
+                }
+
+                reset()
+            }
+            
+        }
+    }
+
+}
+
+function checkRtoL() {
+
+    
+    for (let i = 0; i < board.length - 3; i++) {
+        for (let j = 0; j < board[i].length - 3; j++) {
+
+            if (board[i][j] != 0 &&
+                board[i][j] == board[i + 1][j + 1] &&
+                board[i][j] == board[i + 2][j + 2] &&
+                board[i][j] == board[i + 3][j + 3]
+            ) {
+                if (player1Turn) {
+
+                    pl2Score += 1
+
+                } else {
+
+                    pl1Score += 1
+                }
+
+                reset()
+            }
+            
+        }
+    }
+
 }
 
 
