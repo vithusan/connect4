@@ -3,7 +3,7 @@ body{
     width: 100vw;
     margin: 0 auto;
     background: #95b9cc;
-    position: relative;
+    /* position: relative; */
     font-family: 'Indie Flower', cursive;
 
 }
@@ -63,7 +63,7 @@ h1{
     margin-bottom: 0;
 }
 
-.popup{
+/* .popup{
     position: fixed;
     top: 0;
     bottom: 0;
@@ -71,8 +71,8 @@ h1{
     right: 0;
     background: rgba(0, 0, 0, 0.7);
     
-}
-
+} */
+/* 
 .inputPlayerNames{
     display: flex;
     justify-content: center;
@@ -85,7 +85,7 @@ h1{
     width: 30%;
     position: relative;
     transition: all 5s ease-in-out;
-}
+} */
 
 .inName{
     font-size: 17px;
