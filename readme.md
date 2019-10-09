@@ -25,3 +25,8 @@ User will be prompted with two player names input. Player 1 and player 2 will ha
 
 ![wireframe2](/wireframe.png)
 
+## Future Development
+- Select column instead of each position
+- Check diagonal
+- Responsive design
+- Timer for each player
