@@ -13,3 +13,5 @@ User will be prompted with two player names input. Player 1 and player 2 will ha
 
 ![wireframe](/P1-wireframe.jpg)
 
+![wireframe2](/wireframe.png)
+
