@@ -14,6 +14,10 @@ User will be prompted with two player names input. Player 1 and player 2 will ha
 - Design - Google Fonts
 - VSCode
 
+## Features
+- Input players name
+- Scoreboard
+- Restart button
 
 ## Wireframe
 ![wireframe](/P1-wireframe.jpg)
