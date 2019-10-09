@@ -1,5 +1,7 @@
 const mainBoard = document.querySelector('.connecterDisplay')
 let playersScore = document.querySelector('#playersScore')
+let p1Tag = document.getElementById('p1Tag')
+let p2Tag = document.getElementById('p2Tag')
 
 const nameBox = () =>{
     let inputDiv = document.querySelector('#popup')
@@ -11,8 +13,7 @@ const nameBox = () =>{
     let inName = document.querySelector('.inName')
     let inputBtn = document.querySelector('#nextBtn')
     let inputBtn2 = document.querySelector('#nextBtn2')
-    let p1Tag = document.getElementById('p1Tag')
-    let p2Tag = document.getElementById('p2Tag')
+    
 
 
     inputDiv.style.display = 'block'
@@ -111,6 +112,7 @@ const createBoard = () => {
                         //checkLtoR()
                         //checkRtoL()
                     }, 300)
+                    p1Tag.style.borderBottom = '2px solid #f76c6c'
                     player1Turn = false
                     
                 } else {
@@ -121,6 +123,7 @@ const createBoard = () => {
                         //checkLtoR()
                         //checkRtoL()
                     }, 300)
+                    p2Tag.style.borderBottom = '2px solid #374785'
                     player1Turn = true
                 }
                 
