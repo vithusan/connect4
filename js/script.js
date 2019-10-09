@@ -3,54 +3,54 @@ let playersScore = document.querySelector('#playersScore')
 let p1Tag = document.getElementById('p1Tag')
 let p2Tag = document.getElementById('p2Tag')
 
-// const nameBox = () =>{
-//     let inputDiv = document.querySelector('#popup')
-//     let inputDiv2 = document.querySelector('#popup2')
-//     let playersNm = document.querySelector('#player1')
-//     let playersNm2 = document.querySelector('#player2')
-//     let inputName = document.querySelector('#inputName')
-//     let inputName2 = document.querySelector('#inputName2')
-//     let inName = document.querySelector('.inName')
-//     let inputBtn = document.querySelector('#nextBtn')
-//     let inputBtn2 = document.querySelector('#nextBtn2')
+const nameBox = () =>{
+    let inputDiv = document.querySelector('#popup')
+    let inputDiv2 = document.querySelector('#popup2')
+    let playersNm = document.querySelector('#player1')
+    let playersNm2 = document.querySelector('#player2')
+    let inputName = document.querySelector('#inputName')
+    let inputName2 = document.querySelector('#inputName2')
+    let inName = document.querySelector('.inName')
+    let inputBtn = document.querySelector('#nextBtn')
+    let inputBtn2 = document.querySelector('#nextBtn2')
 
 
 
-//     inputDiv.style.display = 'block'
-//     inputDiv2.style.display = 'none'
+    inputDiv.style.display = 'block'
+    inputDiv2.style.display = 'none'
 
-//     inputBtn.addEventListener('click', () =>{
+    inputBtn.addEventListener('click', () =>{
 
-//         if(inputName.value == ''){
-//             playersNm.innerHTML = `please enter Name`
-//             return false
-//         }
-//         p1Tag.innerText = `${inputName.value}`
+        if(inputName.value == ''){
+            playersNm.innerHTML = `please enter Name`
+            return false
+        }
+        p1Tag.innerText = `${inputName.value}`
 
-//         inputDiv.style.display = 'none'
-//         inputDiv2.style.display = 'block'
-//         nextFuntion()
+        inputDiv.style.display = 'none'
+        inputDiv2.style.display = 'block'
+        nextFuntion()
 
-//     })
+    })
 
-//     const nextFuntion = () =>{
-//         inputBtn2.addEventListener('click', () =>{
+    const nextFuntion = () =>{
+        inputBtn2.addEventListener('click', () =>{
 
-//             if(inputName2.value == ''){
-//                 playersNm2.innerHTML = `please enter Name`
-//                 return false
-//             }
-//             p2Tag.innerText = `${inputName2.value}`
-//             inputDiv2.style.display = 'none'
+            if(inputName2.value == ''){
+                playersNm2.innerHTML = `please enter Name`
+                return false
+            }
+            p2Tag.innerText = `${inputName2.value}`
+            inputDiv2.style.display = 'none'
 
-//         })
-//     }
-
-
-// }
+        })
+    }
 
 
-// nameBox()
+}
+
+
+nameBox()
 let board = [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
