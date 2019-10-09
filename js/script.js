@@ -1,15 +1,8 @@
 const mainBoard = document.querySelector('.connecterDisplay')
-// const playersTurn = document.querySelector('.turns')
+const inputDiv = document.querySelector('#inputPlayerName')
+const inputName = document.querySelector('#inputName')
+const inputBtn = document.querySelector('#nextBtn')
 
-// document.addEventListener('click', ()=> {
-//     checkEmptyColumn()
-// })
-// let board = [
-//     [0, 0, 0, 0],
-//     [0, 0, 0, 0],
-//     [0, 0, 0, 0],
-//     [0, 0, 0, 0]
-// ];
 
 let board = [
     [0, 0, 0, 0, 0, 0, 0],

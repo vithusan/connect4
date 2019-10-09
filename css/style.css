@@ -3,6 +3,9 @@ body{
     width: 100vw;
     margin: 0 auto;
     background: #95b9cc;
+    position: relative;
+    font-family: 'Indie Flower', cursive;
+
 }
 
 .main-container{
@@ -60,12 +63,47 @@ h1{
     margin-bottom: 0;
 }
 
+.popup{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+}
+
 .inputPlayerNames{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    background: #95b9cc;
+    margin: 200px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
     position: relative;
-    width: 600px;
-    height: 250px;
+    transition: all 5s ease-in-out;
+}
+
+input{
+    font-size: 17px;
+    
+    border: none;
+    border-bottom: 1px solid #1c77ac;
+}
+
+button{
+    margin-top: 20px;
+    background: #1c77ac;
+    color: #fff;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+}
+button:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
