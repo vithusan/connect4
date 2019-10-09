@@ -8,7 +8,7 @@ User will be prompted with two player names input. Player 1 and player 2 will ha
 [Connect 4 Game GitHub Site](https://pages.git.generalassemb.ly/vithusan/P1-connect4/)
 
 
-[Connect 4 Game  Netlify Site](https://sharp-hugle-afd342.netlify.com/)
+[Connect 4 Game  Netlify Site](hhttps://angry-villani-7b4a38.netlify.com/)
 
 ## Technologies Used
 - Languages - HTML5, CSS3, Javascript, jQuery
